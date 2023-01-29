@@ -37,80 +37,80 @@ class Game {
     }
 
     start (){
-function createDeck(){
-    let faceValue = [2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"];
-    let suit = ["♥️","♦️","♠️","♣️"];
-    let rank = [2,3,4,5,6,7,8,9,10,11,12,13,14];
-    
-    for(let i = 0; i < faceValue.length; i++){
-                    // console.log(faceValue[i]);
-                    for(let s = 0; s < suit.length; s++){
-                        deck.push(new Card(faceValue[i], suit[s], rank[i]));
-                        // let faceValue = this.faceValues[i]
-                        // let suit = this.suits[s];
-                        // this.deck.push({faceValue, suit});
-                    }
-                }
-// console.log(deck);
-}  
-
-
-
-
-// shuffle deck
-
-function shuffleDeck(){
-            // currentCard = 0;
-            for (let i = deck.length - 1; i > 0; i--){
-                let j = Math.floor(Math.random() * (i + 1));
-                [deck[i], deck[j]] = [deck[j], deck[i]];
-            }
-            // console.log(deck);
-}
-
-
-
-// deal deck - split in two
-
-
-function dealDeck(){
-        for (let i = 0; i < deck.length; i++){
-            hand1.push(deck[i]);
-            i++;
-            hand2.push(deck[i]);
-        }
-        // console.log(hand1);
-        // console.log(hand2);
-}
-
-//use this in place of a deck class
-// function setDeck () { //condensed create, shuffle and deal into one function
+// function createDeck(){
 //     let faceValue = [2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"];
 //     let suit = ["♥️","♦️","♠️","♣️"];
 //     let rank = [2,3,4,5,6,7,8,9,10,11,12,13,14];
     
 //     for(let i = 0; i < faceValue.length; i++){
 //                     // console.log(faceValue[i]);
-//         for(let s = 0; s < suit.length; s++){
-//             deck.push(new Card(faceValue[i], suit[s], rank[i]));
+//                     for(let s = 0; s < suit.length; s++){
+//                         deck.push(new Card(faceValue[i], suit[s], rank[i]));
 //                         // let faceValue = this.faceValues[i]
 //                         // let suit = this.suits[s];
 //                         // this.deck.push({faceValue, suit});
-//         }
-//         // console.log(deck);
-//     }
-//     for (let i = deck.length - 1; i > 0; i--){
-//         let j = Math.floor(Math.random() * (i + 1));
-//         [deck[i], deck[j]] = [deck[j], deck[i]];
-//     }
-//     for (let i = 0; i < deck.length; i++){
-//         hand1.push(deck[i]);
-//         i++;
-//         hand2.push(deck[i]);
-//     }
-//     // console.log(hand1);
-//     // console.log(hand2);
+//                     }
+//                 }
+// // console.log(deck);
+// }  
+
+
+
+
+// // shuffle deck
+
+// function shuffleDeck(){
+//             // currentCard = 0;
+//             for (let i = deck.length - 1; i > 0; i--){
+//                 let j = Math.floor(Math.random() * (i + 1));
+//                 [deck[i], deck[j]] = [deck[j], deck[i]];
+//             }
+//             // console.log(deck);
 // }
+
+
+
+// // deal deck - split in two
+
+
+// function dealDeck(){
+//         for (let i = 0; i < deck.length; i++){
+//             hand1.push(deck[i]);
+//             i++;
+//             hand2.push(deck[i]);
+//         }
+//         // console.log(hand1);
+//         // console.log(hand2);
+// }
+
+//use this in place of a deck class
+function setDeck () { //condensed create, shuffle and deal into one function
+    let faceValue = [2,3,4,5,6,7,8,9,10,"Jack","Queen","King","Ace"];
+    let suit = ["♥️","♦️","♠️","♣️"];
+    let rank = [2,3,4,5,6,7,8,9,10,11,12,13,14];
+    
+    for(let i = 0; i < faceValue.length; i++){
+                    // console.log(faceValue[i]);
+        for(let s = 0; s < suit.length; s++){
+            deck.push(new Card(faceValue[i], suit[s], rank[i]));
+                        // let faceValue = this.faceValues[i]
+                        // let suit = this.suits[s];
+                        // this.deck.push({faceValue, suit});
+        }
+        // console.log(deck);
+    }
+    for (let i = deck.length - 1; i > 0; i--){
+        let j = Math.floor(Math.random() * (i + 1));
+        [deck[i], deck[j]] = [deck[j], deck[i]];
+    }
+    for (let i = 0; i < deck.length; i++){
+        hand1.push(deck[i]);
+        i++;
+        hand2.push(deck[i]);
+    }
+    // console.log(hand1);
+    // console.log(hand2);
+}
 
 //create players
 
@@ -203,13 +203,13 @@ function playGame () { //condensed game play and alerting the score into one fun
 
 // declareScore();
 // declareWinner();   
-createDeck();
-shuffleDeck();
-dealDeck();
+// createDeck();
+// shuffleDeck();
+// dealDeck();
 // compareCard();
 // endGame(); 
 
-// setDeck();
+setDeck();
 playGame();
 }
 }
